@@ -1,0 +1,456 @@
+{
+  "pbtResults": {
+    "10.1 Write property test for category selector completeness (Property 1)": {
+      "status": "passed",
+      "lastRunTimestamp": 1789666688357
+    },
+    "10.2 Write property test for custom-category reload round-trip (Property 14)": {
+      "status": "passed",
+      "lastRunTimestamp": 1789666692904
+    }
+  },
+  "executionHistory": {
+    "1.1 Create the file skeleton: `index.html`, `css/style.css`, `js/app.js`, and `manifest.json`": [
+      {
+        "executionId": "fa2aa196-fcb4-4626-ba4e-a88a647ea916",
+        "chatSessionId": "sess_5220ddab-7a61-4545-88e1-a7aa7c09f199",
+        "timestamp": 1789662993603
+      },
+      {
+        "executionId": "fa2aa196-fcb4-4626-ba4e-a88a647ea916",
+        "chatSessionId": "sess_5220ddab-7a61-4545-88e1-a7aa7c09f199",
+        "timestamp": 1789663098844
+      }
+    ],
+    "1.2 Build the static HTML skeleton inside `index.html`": [
+      {
+        "executionId": "fa2aa196-fcb4-4626-ba4e-a88a647ea916",
+        "chatSessionId": "sess_5220ddab-7a61-4545-88e1-a7aa7c09f199",
+        "timestamp": 1789662999772
+      },
+      {
+        "executionId": "fa2aa196-fcb4-4626-ba4e-a88a647ea916",
+        "chatSessionId": "sess_5220ddab-7a61-4545-88e1-a7aa7c09f199",
+        "timestamp": 1789663103777
+      }
+    ],
+    "1. Scaffold project structure and base HTML": [
+      {
+        "executionId": "fa2aa196-fcb4-4626-ba4e-a88a647ea916",
+        "chatSessionId": "sess_5220ddab-7a61-4545-88e1-a7aa7c09f199",
+        "timestamp": 1789663103927
+      }
+    ],
+    "2.1 Define constants and `AppState`": [
+      {
+        "executionId": "079a5b8a-4672-4080-9231-8e11d3e3444c",
+        "chatSessionId": "sess_403f8129-27af-43a3-b43e-c7039a94a263",
+        "timestamp": 1789663169405
+      },
+      {
+        "executionId": "079a5b8a-4672-4080-9231-8e11d3e3444c",
+        "chatSessionId": "sess_403f8129-27af-43a3-b43e-c7039a94a263",
+        "timestamp": 1789663222034
+      }
+    ],
+    "2.2 Implement `StorageService`": [
+      {
+        "executionId": "079a5b8a-4672-4080-9231-8e11d3e3444c",
+        "chatSessionId": "sess_403f8129-27af-43a3-b43e-c7039a94a263",
+        "timestamp": 1789663227170
+      },
+      {
+        "executionId": "079a5b8a-4672-4080-9231-8e11d3e3444c",
+        "chatSessionId": "sess_403f8129-27af-43a3-b43e-c7039a94a263",
+        "timestamp": 1789663292928
+      }
+    ],
+    "2. Implement constants, AppState, and StorageService in `js/app.js`": [
+      {
+        "executionId": "079a5b8a-4672-4080-9231-8e11d3e3444c",
+        "chatSessionId": "sess_403f8129-27af-43a3-b43e-c7039a94a263",
+        "timestamp": 1789663293049
+      }
+    ],
+    "3.1 Implement `Validator.validateTransaction(name, amount, category)`": [
+      {
+        "executionId": "83bc7c63-7cf3-4bf0-a8de-fadd23e8c620",
+        "chatSessionId": "sess_d851f40a-d86f-48e8-ba4b-5b6bd74770be",
+        "timestamp": 1789663379952
+      },
+      {
+        "executionId": "83bc7c63-7cf3-4bf0-a8de-fadd23e8c620",
+        "chatSessionId": "sess_d851f40a-d86f-48e8-ba4b-5b6bd74770be",
+        "timestamp": 1789663472919
+      }
+    ],
+    "3.3 Implement `Validator.validateCategory(name, existing)`": [
+      {
+        "executionId": "83bc7c63-7cf3-4bf0-a8de-fadd23e8c620",
+        "chatSessionId": "sess_d851f40a-d86f-48e8-ba4b-5b6bd74770be",
+        "timestamp": 1789663384756
+      },
+      {
+        "executionId": "83bc7c63-7cf3-4bf0-a8de-fadd23e8c620",
+        "chatSessionId": "sess_d851f40a-d86f-48e8-ba4b-5b6bd74770be",
+        "timestamp": 1789663477232
+      }
+    ],
+    "3.5 Implement `Validator.validateSpendingLimit(value)`": [
+      {
+        "executionId": "83bc7c63-7cf3-4bf0-a8de-fadd23e8c620",
+        "chatSessionId": "sess_d851f40a-d86f-48e8-ba4b-5b6bd74770be",
+        "timestamp": 1789663388877
+      },
+      {
+        "executionId": "83bc7c63-7cf3-4bf0-a8de-fadd23e8c620",
+        "chatSessionId": "sess_d851f40a-d86f-48e8-ba4b-5b6bd74770be",
+        "timestamp": 1789663482263
+      }
+    ],
+    "3. Implement Validator pure functions": [
+      {
+        "executionId": "83bc7c63-7cf3-4bf0-a8de-fadd23e8c620",
+        "chatSessionId": "sess_d851f40a-d86f-48e8-ba4b-5b6bd74770be",
+        "timestamp": 1789663482397
+      }
+    ],
+    "4.1 Implement `computeBalance(transactions)`": [
+      {
+        "executionId": "e0bd9466-df1a-4694-832b-bea8a7089dad",
+        "chatSessionId": "sess_d4bf9235-c04d-4bb4-a259-b132b57baa65",
+        "timestamp": 1789663571460
+      },
+      {
+        "executionId": "e0bd9466-df1a-4694-832b-bea8a7089dad",
+        "chatSessionId": "sess_d4bf9235-c04d-4bb4-a259-b132b57baa65",
+        "timestamp": 1789663731333
+      }
+    ],
+    "4.3 Implement `getCategoryColor(category, isOverLimit)`": [
+      {
+        "executionId": "e0bd9466-df1a-4694-832b-bea8a7089dad",
+        "chatSessionId": "sess_d4bf9235-c04d-4bb4-a259-b132b57baa65",
+        "timestamp": 1789663576349
+      },
+      {
+        "executionId": "e0bd9466-df1a-4694-832b-bea8a7089dad",
+        "chatSessionId": "sess_d4bf9235-c04d-4bb4-a259-b132b57baa65",
+        "timestamp": 1789663735804
+      }
+    ],
+    "4.7 Implement `groupByMonth(transactions)` and `computeMonthlySummary(transactions, categories)`": [
+      {
+        "executionId": "e0bd9466-df1a-4694-832b-bea8a7089dad",
+        "chatSessionId": "sess_d4bf9235-c04d-4bb4-a259-b132b57baa65",
+        "timestamp": 1789663583263
+      },
+      {
+        "executionId": "e0bd9466-df1a-4694-832b-bea8a7089dad",
+        "chatSessionId": "sess_d4bf9235-c04d-4bb4-a259-b132b57baa65",
+        "timestamp": 1789663744605
+      }
+    ],
+    "4.5 Implement `computeChartData(transactions, customCategories, spendingLimits)`": [
+      {
+        "executionId": "e0bd9466-df1a-4694-832b-bea8a7089dad",
+        "chatSessionId": "sess_d4bf9235-c04d-4bb4-a259-b132b57baa65",
+        "timestamp": 1789663727230
+      },
+      {
+        "executionId": "e0bd9466-df1a-4694-832b-bea8a7089dad",
+        "chatSessionId": "sess_d4bf9235-c04d-4bb4-a259-b132b57baa65",
+        "timestamp": 1789663740182
+      }
+    ],
+    "4. Implement pure compute functions": [
+      {
+        "executionId": "e0bd9466-df1a-4694-832b-bea8a7089dad",
+        "chatSessionId": "sess_d4bf9235-c04d-4bb4-a259-b132b57baa65",
+        "timestamp": 1789663744775
+      }
+    ],
+    "5. Checkpoint — Ensure all pure-function tests pass": [
+      {
+        "executionId": "a7f283d2-2298-45ec-959e-811085ec9544",
+        "chatSessionId": "sess_9151f74f-2bd0-4201-b544-cca04ce508dc",
+        "timestamp": 1789664652411
+      },
+      {
+        "executionId": "a7f283d2-2298-45ec-959e-811085ec9544",
+        "chatSessionId": "sess_9151f74f-2bd0-4201-b544-cca04ce508dc",
+        "timestamp": 1789665174608
+      }
+    ],
+    "6.1 Implement `renderBalance()`": [
+      {
+        "executionId": "d20a948b-3d61-4f43-8696-97425a3372ea",
+        "chatSessionId": "sess_88e47c25-d5b0-4b11-bc84-45f57b379483",
+        "timestamp": 1789665227328
+      },
+      {
+        "executionId": "d20a948b-3d61-4f43-8696-97425a3372ea",
+        "chatSessionId": "sess_88e47c25-d5b0-4b11-bc84-45f57b379483",
+        "timestamp": 1789665714341
+      }
+    ],
+    "6.2 Implement `renderTransactionList()`": [
+      {
+        "executionId": "d20a948b-3d61-4f43-8696-97425a3372ea",
+        "chatSessionId": "sess_88e47c25-d5b0-4b11-bc84-45f57b379483",
+        "timestamp": 1789665232286
+      },
+      {
+        "executionId": "d20a948b-3d61-4f43-8696-97425a3372ea",
+        "chatSessionId": "sess_88e47c25-d5b0-4b11-bc84-45f57b379483",
+        "timestamp": 1789665720241
+      }
+    ],
+    "6.4 Implement `renderChart()`": [
+      {
+        "executionId": "d20a948b-3d61-4f43-8696-97425a3372ea",
+        "chatSessionId": "sess_88e47c25-d5b0-4b11-bc84-45f57b379483",
+        "timestamp": 1789665237503
+      },
+      {
+        "executionId": "d20a948b-3d61-4f43-8696-97425a3372ea",
+        "chatSessionId": "sess_88e47c25-d5b0-4b11-bc84-45f57b379483",
+        "timestamp": 1789665725457
+      }
+    ],
+    "6.5 Implement `renderMonthlySummary()`": [
+      {
+        "executionId": "d20a948b-3d61-4f43-8696-97425a3372ea",
+        "chatSessionId": "sess_88e47c25-d5b0-4b11-bc84-45f57b379483",
+        "timestamp": 1789665243395
+      },
+      {
+        "executionId": "d20a948b-3d61-4f43-8696-97425a3372ea",
+        "chatSessionId": "sess_88e47c25-d5b0-4b11-bc84-45f57b379483",
+        "timestamp": 1789665729886
+      }
+    ],
+    "6.6 Implement `renderSpendingLimitsPanel()`": [
+      {
+        "executionId": "d20a948b-3d61-4f43-8696-97425a3372ea",
+        "chatSessionId": "sess_88e47c25-d5b0-4b11-bc84-45f57b379483",
+        "timestamp": 1789665247679
+      },
+      {
+        "executionId": "d20a948b-3d61-4f43-8696-97425a3372ea",
+        "chatSessionId": "sess_88e47c25-d5b0-4b11-bc84-45f57b379483",
+        "timestamp": 1789665735336
+      }
+    ],
+    "6.7 Implement master `render()` function": [
+      {
+        "executionId": "d20a948b-3d61-4f43-8696-97425a3372ea",
+        "chatSessionId": "sess_88e47c25-d5b0-4b11-bc84-45f57b379483",
+        "timestamp": 1789665252101
+      },
+      {
+        "executionId": "d20a948b-3d61-4f43-8696-97425a3372ea",
+        "chatSessionId": "sess_88e47c25-d5b0-4b11-bc84-45f57b379483",
+        "timestamp": 1789665739582
+      }
+    ],
+    "6. Implement render functions": [
+      {
+        "executionId": "d20a948b-3d61-4f43-8696-97425a3372ea",
+        "chatSessionId": "sess_88e47c25-d5b0-4b11-bc84-45f57b379483",
+        "timestamp": 1789665739699
+      }
+    ],
+    "7.1 Implement `showNotification(message)` and `dismissNotification()`": [
+      {
+        "executionId": "d2644e0a-ea7e-402a-9a62-76a8e5c51b99",
+        "chatSessionId": "sess_81b1a59f-b771-44f4-ba60-7ed40566ba88",
+        "timestamp": 1789665873651
+      },
+      {
+        "executionId": "d2644e0a-ea7e-402a-9a62-76a8e5c51b99",
+        "chatSessionId": "sess_81b1a59f-b771-44f4-ba60-7ed40566ba88",
+        "timestamp": 1789666077054
+      }
+    ],
+    "7.2 Implement `handleFormSubmit(event)`": [
+      {
+        "executionId": "d2644e0a-ea7e-402a-9a62-76a8e5c51b99",
+        "chatSessionId": "sess_81b1a59f-b771-44f4-ba60-7ed40566ba88",
+        "timestamp": 1789665878423
+      },
+      {
+        "executionId": "d2644e0a-ea7e-402a-9a62-76a8e5c51b99",
+        "chatSessionId": "sess_81b1a59f-b771-44f4-ba60-7ed40566ba88",
+        "timestamp": 1789666082392
+      }
+    ],
+    "7.3 Implement `handleDeleteClick(id)`": [
+      {
+        "executionId": "d2644e0a-ea7e-402a-9a62-76a8e5c51b99",
+        "chatSessionId": "sess_81b1a59f-b771-44f4-ba60-7ed40566ba88",
+        "timestamp": 1789665882384
+      },
+      {
+        "executionId": "d2644e0a-ea7e-402a-9a62-76a8e5c51b99",
+        "chatSessionId": "sess_81b1a59f-b771-44f4-ba60-7ed40566ba88",
+        "timestamp": 1789666086496
+      }
+    ],
+    "7.4 Implement `handleAddCategory()`": [
+      {
+        "executionId": "d2644e0a-ea7e-402a-9a62-76a8e5c51b99",
+        "chatSessionId": "sess_81b1a59f-b771-44f4-ba60-7ed40566ba88",
+        "timestamp": 1789665887773
+      },
+      {
+        "executionId": "d2644e0a-ea7e-402a-9a62-76a8e5c51b99",
+        "chatSessionId": "sess_81b1a59f-b771-44f4-ba60-7ed40566ba88",
+        "timestamp": 1789666090942
+      }
+    ],
+    "7.6 Implement `handleSaveLimit(category, value)` and `handleClearLimit(category)`": [
+      {
+        "executionId": "d2644e0a-ea7e-402a-9a62-76a8e5c51b99",
+        "chatSessionId": "sess_81b1a59f-b771-44f4-ba60-7ed40566ba88",
+        "timestamp": 1789665892966
+      },
+      {
+        "executionId": "d2644e0a-ea7e-402a-9a62-76a8e5c51b99",
+        "chatSessionId": "sess_81b1a59f-b771-44f4-ba60-7ed40566ba88",
+        "timestamp": 1789666096136
+      }
+    ],
+    "7.8 Wire toggle buttons and DOMContentLoaded init": [
+      {
+        "executionId": "d2644e0a-ea7e-402a-9a62-76a8e5c51b99",
+        "chatSessionId": "sess_81b1a59f-b771-44f4-ba60-7ed40566ba88",
+        "timestamp": 1789665901837
+      },
+      {
+        "executionId": "d2644e0a-ea7e-402a-9a62-76a8e5c51b99",
+        "chatSessionId": "sess_81b1a59f-b771-44f4-ba60-7ed40566ba88",
+        "timestamp": 1789666103443
+      }
+    ],
+    "7. Implement event handlers and notification system": [
+      {
+        "executionId": "d2644e0a-ea7e-402a-9a62-76a8e5c51b99",
+        "chatSessionId": "sess_81b1a59f-b771-44f4-ba60-7ed40566ba88",
+        "timestamp": 1789666103578
+      }
+    ],
+    "8.1 Write responsive base layout in `css/style.css`": [
+      {
+        "executionId": "6b35ebcb-eb03-46bd-9e26-f814158cca32",
+        "chatSessionId": "sess_24f1ae2f-aed0-4c14-a688-09b89f8acc19",
+        "timestamp": 1789666228312
+      },
+      {
+        "executionId": "6b35ebcb-eb03-46bd-9e26-f814158cca32",
+        "chatSessionId": "sess_24f1ae2f-aed0-4c14-a688-09b89f8acc19",
+        "timestamp": 1789666411901
+      }
+    ],
+    "8.2 Add typography and contrast styles": [
+      {
+        "executionId": "6b35ebcb-eb03-46bd-9e26-f814158cca32",
+        "chatSessionId": "sess_24f1ae2f-aed0-4c14-a688-09b89f8acc19",
+        "timestamp": 1789666232893
+      },
+      {
+        "executionId": "6b35ebcb-eb03-46bd-9e26-f814158cca32",
+        "chatSessionId": "sess_24f1ae2f-aed0-4c14-a688-09b89f8acc19",
+        "timestamp": 1789666416366
+      }
+    ],
+    "8.3 Add responsive breakpoints for 320px–1920px": [
+      {
+        "executionId": "6b35ebcb-eb03-46bd-9e26-f814158cca32",
+        "chatSessionId": "sess_24f1ae2f-aed0-4c14-a688-09b89f8acc19",
+        "timestamp": 1789666233227
+      },
+      {
+        "executionId": "6b35ebcb-eb03-46bd-9e26-f814158cca32",
+        "chatSessionId": "sess_24f1ae2f-aed0-4c14-a688-09b89f8acc19",
+        "timestamp": 1789666422556
+      }
+    ],
+    "8. Implement CSS layout, theming, and accessibility": [
+      {
+        "executionId": "6b35ebcb-eb03-46bd-9e26-f814158cca32",
+        "chatSessionId": "sess_24f1ae2f-aed0-4c14-a688-09b89f8acc19",
+        "timestamp": 1789666422647
+      }
+    ],
+    "9.1 Handle `localStorage` unavailable / corrupt on load": [
+      {
+        "executionId": "5a91700d-0f15-432e-95a4-9038eb188715",
+        "chatSessionId": "sess_07aeacfa-2018-4e26-85d9-005192c92ffd",
+        "timestamp": 1789666473698
+      },
+      {
+        "executionId": "5a91700d-0f15-432e-95a4-9038eb188715",
+        "chatSessionId": "sess_07aeacfa-2018-4e26-85d9-005192c92ffd",
+        "timestamp": 1789666537232
+      }
+    ],
+    "9.2 Handle Chart.js CDN failure": [
+      {
+        "executionId": "5a91700d-0f15-432e-95a4-9038eb188715",
+        "chatSessionId": "sess_07aeacfa-2018-4e26-85d9-005192c92ffd",
+        "timestamp": 1789666478383
+      },
+      {
+        "executionId": "5a91700d-0f15-432e-95a4-9038eb188715",
+        "chatSessionId": "sess_07aeacfa-2018-4e26-85d9-005192c92ffd",
+        "timestamp": 1789666541457
+      }
+    ],
+    "9. Implement `loadAll` error handling and notification paths": [
+      {
+        "executionId": "5a91700d-0f15-432e-95a4-9038eb188715",
+        "chatSessionId": "sess_07aeacfa-2018-4e26-85d9-005192c92ffd",
+        "timestamp": 1789666541590
+      }
+    ],
+    "10.1 Write property test for category selector completeness (Property 1)": [
+      {
+        "executionId": "c4b13947-6024-4566-b1e5-596cda55c705",
+        "chatSessionId": "sess_69d2eb5e-172e-4db3-bdf5-5bcac24f4672",
+        "timestamp": 1789666606236
+      },
+      {
+        "executionId": "c4b13947-6024-4566-b1e5-596cda55c705",
+        "chatSessionId": "sess_69d2eb5e-172e-4db3-bdf5-5bcac24f4672",
+        "timestamp": 1789666709303
+      }
+    ],
+    "10.2 Write property test for custom-category reload round-trip (Property 14)": [
+      {
+        "executionId": "c4b13947-6024-4566-b1e5-596cda55c705",
+        "chatSessionId": "sess_69d2eb5e-172e-4db3-bdf5-5bcac24f4672",
+        "timestamp": 1789666610709
+      },
+      {
+        "executionId": "c4b13947-6024-4566-b1e5-596cda55c705",
+        "chatSessionId": "sess_69d2eb5e-172e-4db3-bdf5-5bcac24f4672",
+        "timestamp": 1789666713990
+      }
+    ],
+    "10. Write `StorageService` property tests for category selector (Property 1) and custom-category reload round-trip (Property 14)": [
+      {
+        "executionId": "c4b13947-6024-4566-b1e5-596cda55c705",
+        "chatSessionId": "sess_69d2eb5e-172e-4db3-bdf5-5bcac24f4672",
+        "timestamp": 1789666709505
+      }
+    ],
+    "11. Final checkpoint — Ensure all tests pass and full feature is wired together": [
+      {
+        "executionId": "afa1c360-4771-4db4-bce9-ec01ab465f52",
+        "chatSessionId": "sess_f6ebd1bc-b810-4d19-a3d3-6b1aa5b8cfd2",
+        "timestamp": 1789666771448
+      }
+    ]
+  }
+}
