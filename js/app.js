@@ -1,4 +1,4 @@
-// Expense & Budget Visualizer — Application Logic
+﻿// Expense & Budget Visualizer — Application Logic
 
 // ─── Constants ───────────────────────────────────────────────────────────────
 
@@ -899,21 +899,14 @@ function render() {
   renderTransactionList();
   renderChart();
 
-  // ── Conditional panels ────────────────────────────────────────────────────
-  const summarySection = document.getElementById('monthly-summary');
+  // ── Conditional panels — rendered into modals, not inline sections ────────
+  // Re-render content if the modal is currently open, so data stays fresh.
   if (AppState.summaryVisible) {
-    if (summarySection) summarySection.hidden = false;
     renderMonthlySummary();
-  } else {
-    if (summarySection) summarySection.hidden = true;
   }
 
-  const limitPanel = document.getElementById('limit-settings');
   if (AppState.limitPanelVisible) {
-    if (limitPanel) limitPanel.hidden = false;
     renderSpendingLimitsPanel();
-  } else {
-    if (limitPanel) limitPanel.hidden = true;
   }
 }
 
@@ -1183,23 +1176,86 @@ document.addEventListener('DOMContentLoaded', () => {
     dismissBtn.addEventListener('click', dismissNotification);
   }
 
+  // ── Modal helpers ──────────────────────────────────────────────────────────
+  function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      modal.removeAttribute('hidden');
+      document.body.style.overflow = 'hidden';
+      // Focus the close button for keyboard accessibility.
+      const closeBtn = modal.querySelector('.modal-close-btn');
+      if (closeBtn) closeBtn.focus();
+    }
+  }
+
+  function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      modal.setAttribute('hidden', '');
+      document.body.style.overflow = '';
+    }
+  }
+
+  // Close modal when backdrop or close button is clicked.
+  document.querySelectorAll('.modal').forEach(modal => {
+    const closeBtn = modal.querySelector('.modal-close-btn');
+    const backdrop = modal.querySelector('.modal-backdrop');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        if (modal.id === 'modal-summary') {
+          AppState.summaryVisible = false;
+        } else if (modal.id === 'modal-limits') {
+          AppState.limitPanelVisible = false;
+        }
+        closeModal(modal.id);
+      });
+    }
+    if (backdrop) {
+      backdrop.addEventListener('click', () => {
+        if (modal.id === 'modal-summary') {
+          AppState.summaryVisible = false;
+        } else if (modal.id === 'modal-limits') {
+          AppState.limitPanelVisible = false;
+        }
+        closeModal(modal.id);
+      });
+    }
+  });
+
+  // Close modal on Escape key.
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (AppState.summaryVisible) {
+        AppState.summaryVisible = false;
+        closeModal('modal-summary');
+      }
+      if (AppState.limitPanelVisible) {
+        AppState.limitPanelVisible = false;
+        closeModal('modal-limits');
+      }
+    }
+  });
+
   // ── Wire toggle buttons ────────────────────────────────────────────────────
   const toggleSummaryBtn = document.getElementById('toggle-summary-btn');
   if (toggleSummaryBtn) {
     toggleSummaryBtn.addEventListener('click', () => {
-      AppState.summaryVisible = !AppState.summaryVisible;
-      render();
+      AppState.summaryVisible = true;
+      renderMonthlySummary();
+      openModal('modal-summary');
     });
   }
 
   const toggleLimitsBtn = document.getElementById('toggle-limits-btn');
   if (toggleLimitsBtn) {
     toggleLimitsBtn.addEventListener('click', () => {
-      AppState.limitPanelVisible = !AppState.limitPanelVisible;
-      render();
+      AppState.limitPanelVisible = true;
+      renderSpendingLimitsPanel();
+      openModal('modal-limits');
     });
   }
 
   // ── Initial render ─────────────────────────────────────────────────────────
   render();
 });
+

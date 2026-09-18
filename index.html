@@ -1,42 +1,45 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Expense &amp; Budget Visualizer</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-  <!-- Notification bar (Requirements 5.4, 5.5, 5.6) -->
+  <!-- Notification bar -->
   <div id="notification-bar" role="alert" hidden>
     <span id="notification-msg"></span>
-    <button id="notification-dismiss" type="button">×</button>
+    <button id="notification-dismiss" type="button">&#215;</button>
   </div>
 
-  <!-- Summary / balance bar (Requirements 3.1, 7.1, 8.1) -->
+  <!-- Header -->
   <header>
     <span id="balance-display">0.00</span>
-    <button id="toggle-summary-btn" type="button">Monthly Summary</button>
-    <button id="toggle-limits-btn" type="button">Spending Limits</button>
+    <button id="toggle-summary-btn" type="button">&#128197; Monthly Summary</button>
+    <button id="toggle-limits-btn" type="button">&#127919; Spending Limits</button>
   </header>
 
   <main>
 
-    <!-- Input form (Requirements 1.1, 1.2) -->
+    <!-- Input form -->
     <section id="form-section">
       <h2>Add Transaction</h2>
       <form id="txn-form" novalidate>
         <div class="field-group">
           <label for="item-name">Item Name</label>
-          <input id="item-name" type="text" maxlength="100" required placeholder="e.g. Grocery run" />
-          <span class="error" id="item-name-error"></span>
+          <input id="item-name" type="text" maxlength="100" required
+                 placeholder="e.g. Grocery run" autocomplete="off" />
+          <span class="error" id="item-name-error" aria-live="polite"></span>
         </div>
 
         <div class="field-group">
           <label for="amount">Amount</label>
-          <input id="amount" type="number" min="0.01" max="999999999.99" step="0.01" required placeholder="0.00" />
-          <span class="error" id="amount-error"></span>
+          <input id="amount" type="number" min="0.01" max="999999999.99"
+                 step="0.01" required placeholder="0.00"
+                 inputmode="decimal" />
+          <span class="error" id="amount-error" aria-live="polite"></span>
         </div>
 
         <div class="field-group">
@@ -46,55 +49,74 @@
             <option value="Transport">Transport</option>
             <option value="Fun">Fun</option>
           </select>
-          <span class="error" id="category-error"></span>
+          <span class="error" id="category-error" aria-live="polite"></span>
         </div>
 
-        <button id="add-btn" type="submit">Add</button>
+        <button id="add-btn" type="submit">Add Transaction</button>
       </form>
 
-      <!-- Custom category UI (Requirement 6.1) -->
+      <!-- Custom category -->
       <div id="custom-cat-section">
         <h3>Add Custom Category</h3>
-        <input id="custom-cat-input" type="text" maxlength="50" placeholder="New category name" />
+        <input id="custom-cat-input" type="text" maxlength="50"
+               placeholder="New category name" autocomplete="off" />
         <button id="add-cat-btn" type="button">Add Category</button>
-        <span id="custom-cat-error"></span>
+        <span id="custom-cat-error" aria-live="polite"></span>
       </div>
     </section>
 
-    <!-- Transaction list (Requirement 2.2) -->
+    <!-- Transaction list -->
     <section id="list-section">
       <h2>Transactions</h2>
       <div id="txn-list-wrapper">
-        <ul id="txn-list">
+        <ul id="txn-list" aria-label="Transaction list">
           <li class="empty-state">No transactions recorded.</li>
         </ul>
       </div>
     </section>
 
-    <!-- Spending chart (Requirement 4.1) -->
+    <!-- Chart -->
     <section id="chart-section">
       <h2>Spending by Category</h2>
       <div id="chart-wrapper">
         <canvas id="spending-chart"></canvas>
-        <p id="chart-placeholder">No data to display yet. Add a transaction to see your spending chart.</p>
+        <p id="chart-placeholder">No data yet. Add a transaction to see your spending chart.</p>
       </div>
     </section>
 
-    <!-- Monthly summary panel (Requirement 7.1) -->
-    <section id="monthly-summary" hidden>
-      <h2>Monthly Summary</h2>
-    </section>
-
-    <!-- Spending limits panel (Requirement 8.1) -->
-    <div id="limit-settings" hidden>
-      <h2>Spending Limits</h2>
-    </div>
-
   </main>
 
-  <!-- Chart.js CDN (pinned 4.4.0) -->
+  <!-- Modal: Monthly Summary -->
+  <div id="modal-summary" class="modal" role="dialog" aria-modal="true"
+       aria-labelledby="modal-summary-title" hidden>
+    <div class="modal-backdrop"></div>
+    <div class="modal-box">
+      <div class="modal-header">
+        <h2 id="modal-summary-title">Monthly Summary</h2>
+        <button class="modal-close-btn" type="button" aria-label="Close">&#215;</button>
+      </div>
+      <div class="modal-body">
+        <div id="monthly-summary"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Spending Limits -->
+  <div id="modal-limits" class="modal" role="dialog" aria-modal="true"
+       aria-labelledby="modal-limits-title" hidden>
+    <div class="modal-backdrop"></div>
+    <div class="modal-box">
+      <div class="modal-header">
+        <h2 id="modal-limits-title">Spending Limits</h2>
+        <button class="modal-close-btn" type="button" aria-label="Close">&#215;</button>
+      </div>
+      <div class="modal-body">
+        <div id="limit-settings"></div>
+      </div>
+    </div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-  <!-- Application logic -->
   <script src="js/app.js" defer></script>
 </body>
 </html>
